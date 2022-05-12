@@ -18,6 +18,6 @@ jobs:
       - name: "Keepalive Action"
         uses: k5-mot/keepalive-action@main
         with:
-          MESSAGE: "${{env.MESSAGE}}"
+          MESSAGE: ${{env.MESSAGE}}
           GITHUB_TOKEN: ${{env.GITHUB_TOKEN}}
 
