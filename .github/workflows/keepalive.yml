@@ -1,4 +1,4 @@
-name: ":octocat: Keepalive Action"
+name: "Keepalive Event"
 
 on:
   schedule:
