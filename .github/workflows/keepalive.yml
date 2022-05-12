@@ -9,6 +9,7 @@ jobs:
   ubuntu-test:
     env:
       MESSAGE: ":robot: Keepalive Action"
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     runs-on: ubuntu-latest
 
     steps:
@@ -17,5 +18,6 @@ jobs:
       - name: "Keepalive Action"
         uses: k5-mot/keepalive-action@main
         with:
-          message: "${{env.MESSAGE}}"
+          MESSAGE: "${{env.MESSAGE}}"
+          GITHUB_TOKEN: ${{env.GITHUB_TOKEN}}
 
