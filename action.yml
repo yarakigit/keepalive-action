@@ -1,0 +1,19 @@
+name: ":octocat: Keepalive Action"
+description: "Make empty commit regularly for keeping alive a cronjob trigger on GitHub Action"
+
+inputs:
+  message:
+    description: "Commit message"
+    value:
+    default: ":robot: Keepalive Action"
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        git config --global user.email "simple@simple.com"
+        git config --global user.name "Keepalive Action"
+        git commit --verbose --allow-empty -m "${{inputs.message}}"
+        git push --verbose "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git"
+

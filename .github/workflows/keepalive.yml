@@ -1,0 +1,21 @@
+name: ":octocat: Keepalive Action"
+
+on:
+  schedule:
+    - cron: '0 22 */1 * *'
+  workflow_dispatch:
+
+jobs:
+  ubuntu-test:
+    env:
+      MESSAGE: ":robot: Keepalive Action"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: ":robot: Keepalive Action"
+        uses: k5-mot/keepalive-action@main
+        with:
+          message: "${{env.MESSAGE}}"
+
