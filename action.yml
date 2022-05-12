@@ -15,8 +15,6 @@ runs:
   steps:
     - shell: bash
       run: |
-        echo "$GITHUB_REPOSITORY"
-        echo "$GITHUB_ACTOR"
         git config --global user.email "simple@simple.com"
         git config --global user.name "Keepalive Action"
         git commit --verbose --allow-empty -m "${{inputs.MESSAGE}}"
