@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: "Keepalive Action"
-        uses: k5-mot/keepalive-action@main
+        uses: yarakigit/keepalive-action@main
         with:
           MESSAGE: ${{env.MESSAGE}}
           GITHUB_TOKEN: ${{env.GITHUB_TOKEN}}
